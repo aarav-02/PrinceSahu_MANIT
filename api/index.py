@@ -87,7 +87,7 @@ async def extract_data_with_llm(document_url: str) -> Dict[str, Any]:
     """Calls the Gemini API using the multimodal document and strict JSON schema."""
     # Check 1: API Key existence
     if not API_KEY:
-        raise HTTPException(status_code=500, detail="API_KEY is missing in Vercel environment variables. Check Project Settings.")
+        raise HTTPException(status_code=500, detail="API_KEY is missing in Render environment variables. Check Project Settings.")
 
     # 1. Download and encode the file 
     base64_file_with_mime = _download_file_to_base64(document_url)
